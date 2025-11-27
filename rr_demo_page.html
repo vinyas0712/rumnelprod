@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <script defer src='https://g.3gl.net/jp/14213/latest/InitialLoadScript.js'></script>
+
+<!-- The following code changes the beacon from unload/beforeunload to pageHide -->
+<!-- <script language="javascript" type="text/javascript">
+if (window.RProfiler) {
+    window.RProfiler.usePageHide();
+} else {
+    window.addEventListener('GlimpseLoaded', () => window.RProfiler.usePageHide());
+}
+</script> -->
+  <title>RR Demo Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .banner {
+      display: none;
+      padding: 10px;
+      margin-top: 15px;
+      background-color: #4caf50;
+      color: white;
+      font-weight: bold;
+    }
+    .rr-block {
+      border: 2px dashed #999;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    .rr-mask {
+      background-color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h2>RR Recording Demo</h2>
+
+  <!-- rr-block element -->
+  <div class="rr-block">
+    This section will be replaced with a placeholder during replay.
+  </div>
+
+  <!-- rr-ignore input -->
+  <input type="text" class="rr-ignore" placeholder="Ignored input" /><br><br>
+
+  <!-- rr-mask text -->
+  <p class="rr-mask">This text will be masked during recording.</p>
+
+  <!-- Password input -->
+  <input type="password" placeholder="Enter password" /><br><br>
+
+  <!-- Dropdown -->
+  <select>
+    <option value="">Select an option</option>
+    <option value="1">Option 1</option>
+    <option value="2">Option 2</option>
+  </select><br><br>
+
+  <!-- Button -->
+  <button id="clickBtn">Click Me</button>
+
+  <!-- Banner -->
+  <div class="banner" id="banner">Button Clicked!</div>
+
+  <script>
+    document.getElementById('clickBtn').addEventListener('click', function() {
+      document.getElementById('banner').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
